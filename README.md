@@ -4,10 +4,10 @@ Database was created in MSSQL.
 Power BI Used for preliminary visualization
 Python used for Text mining
 
-![alt text](/FAANGEmployeeDB.png)
+![alt text](/results/FAANGEmployeeDB.png)
 
-![alt text](/comparison_of_overall_ratings.png)
+![alt text](/results/comparison_of_overall_ratings.png)
 
-![alt text](/apple_summary.png)
+![alt text](/results/apple_summary.png)
 
-![alt text](/training.png)
+![alt text](/results/training.png)
