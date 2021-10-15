@@ -1,0 +1,54 @@
+apple_summary.png
+Company_Ratings.png
+current_vs_former.png
+microsoft_cons.png
+predictions.png
+reviews_by_year.png
+top_employee_locations.png
+
+Create Table results
+(
+    results_id uniqueidentifier ROWGUIDCOL unique NOT NULL,
+    root_directory varchar(max),
+    file_name varchar(max),
+    file_create_date datetime,
+    file_size numeric(10,5),
+    file_stream_col varbinary (max) FILESTREAM
+);
+
+DECLARE @Document AS VARBINARY(MAX);
+ 
+-- Load the image data
+SELECT @Document = CAST(bulkcolumn AS VARBINARY(MAX))
+      FROM OPENROWSET(
+            BULK
+            'D:\CIS 640\Python files\insights.py',
+            SINGLE_BLOB ) AS Doc
+            
+-- Insert the data to the table           
+INSERT INTO results (results_id, root_directory, file_name, file_create_date, file_size, file_stream_col)
+SELECT NEWID(), 'D:\CIS 640\Python files','insights.py',getdate(),10, @Document;
+ 
+DECLARE @Document AS VARBINARY(MAX);
+-- Load the image data
+SELECT @Document = CAST(bulkcolumn AS VARBINARY(MAX))
+      FROM OPENROWSET(
+            BULK
+            'C:\Users\Zawaad\Dropbox\CIS 640\Text mining\results\amazon_pros.png',
+            SINGLE_BLOB ) AS Doc
+            
+-- Insert the data to the table           
+INSERT INTO results (results_id, root_directory, file_name, file_create_date, file_size, file_stream_col)
+SELECT NEWID(), 'C:\Users\Zawaad\Dropbox\CIS 640\Text mining\results','amazon_pros.png',getdate(),10, @Document;
+
+DECLARE @Document AS VARBINARY(MAX);
+-- Load the image data
+SELECT @Document = CAST(bulkcolumn AS VARBINARY(MAX))
+      FROM OPENROWSET(
+            BULK
+            'C:\Users\Zawaad\Dropbox\CIS 640\Text mining\results\top_employee_locations.png',
+            SINGLE_BLOB ) AS Doc
+            
+-- Insert the data to the table           
+INSERT INTO results (results_id, root_directory, file_name, file_create_date, file_size, file_stream_col)
+SELECT NEWID(), 'C:\Users\Zawaad\Dropbox\CIS 640\Text mining\results','top_employee_locations.png',getdate(),10, @Document;
