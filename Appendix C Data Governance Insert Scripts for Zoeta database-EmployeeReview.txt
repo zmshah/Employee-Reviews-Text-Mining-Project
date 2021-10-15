@@ -1,0 +1,198 @@
+-- Insert into schema
+
+INSERT INTO DG_Schema (schema_ID, schema_name, description, create_date, modify_date)
+VALUES (5, 'EmployeeReviews', 'EmployeeReviews FAANG companies', '7/13/2021', '');
+
+-- Insert into tables
+
+INSERT INTO DG_Tables (Table_ID, Table_Name, Database_ID, description, create_date, modify_date)
+VALUES ('DGT000121', 'company_data', 5, 'companay_data_table', '7/13/2021', '');
+
+INSERT INTO DG_Tables (Table_ID, Table_Name, Database_ID, description, create_date, modify_date)
+VALUES ('DGT000122', 'employee_data', 5, 'emplpoyee_data_table', '7/13/2021', '');
+
+INSERT INTO DG_Tables (Table_ID, Table_Name, Database_ID, description, create_date, modify_date)
+VALUES ('DGT000123', 'employee_reviews', 5, 'employee_reviews_table', '7/13/2021', '');
+
+INSERT INTO DG_Tables (Table_ID, Table_Name, Database_ID, description, create_date, modify_date)
+VALUES ('DGT000124', 'results', 5, 'results_table', '7/13/2021', '');
+
+-- INSERT into columns
+
+-- company_data
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000121', 'company_data', 'DGT_Column_ID_761', 'comp_id', 'primary key', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000121', 'company_data', 'DGT_Column_ID_762', 'comp_name', '', '7/13/2021', '');
+
+-- employee_data
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000122', 'employee_data', 'DGT_Column_ID_763', 'emp_id', 'primary key', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000122', 'employee_data', 'DGT_Column_ID_764', 'comp_id', 'primary key', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000122', 'employee_data', 'DGT_Column_ID_765', 'emp_name', '', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000122', 'employee_data', 'DGT_Column_ID_766', 'emp_fname', '', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000122', 'employee_data', 'DGT_Column_ID_767', 'emp_lname', '', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000122', 'employee_data', 'DGT_Column_ID_768', 'emp_email', '', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000122', 'employee_data', 'DGT_Column_ID_769', 'emp_phone', '', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000122', 'employee_data', 'DGT_Column_ID_770', 'emp_address', '', '7/13/2021', '');
+
+-- employee_reviews
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000123', 'employee_reviews', 'DGT_Column_ID_771', 'review_id', 'primary key', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000123', 'employee_reviews', 'DGT_Column_ID_772', 'emp_id', '', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000123', 'employee_reviews', 'DGT_Column_ID_773', 'comp_id', '', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000123', 'employee_reviews', 'DGT_Column_ID_774', 'location', '', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000123', 'employee_reviews', 'DGT_Column_ID_775', 'review_date', '', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000123', 'employee_reviews', 'DGT_Column_ID_776', 'employee_status', '', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000123', 'employee_reviews', 'DGT_Column_ID_777', 'position', '', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000123', 'employee_reviews', 'DGT_Column_ID_778', 'summary', '', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000123', 'employee_reviews', 'DGT_Column_ID_779', 'pros', '', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000123', 'employee_reviews', 'DGT_Column_ID_780', 'cons', '', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000123', 'employee_reviews', 'DGT_Column_ID_781', 'advice_to_mgmt', '', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000123', 'employee_reviews', 'DGT_Column_ID_782', 'overall_ratings', '', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000123', 'employee_reviews', 'DGT_Column_ID_783', 'worK_balance_stars', '', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000123', 'employee_reviews', 'DGT_Column_ID_784', 'culture_values_stars', '', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000123', 'employee_reviews', 'DGT_Column_ID_785', 'career_opportunities_stars', '', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000123', 'employee_reviews', 'DGT_Column_ID_786', 'comp_benefit_stars', '', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000123', 'employee_reviews', 'DGT_Column_ID_787', 'senior_management_start', '', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000123', 'employee_reviews', 'DGT_Column_ID_788', 'helpful_count', '', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000123', 'employee_reviews', 'DGT_Column_ID_789', 'link', '', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000123', 'employee_reviews', 'DGT_Column_ID_790', 'is_anonymous', '', '7/13/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000123', 'employee_reviews', 'DGT_Column_ID_791', 'avg_rating', '', '7/13/2021', '');
+
+-- results
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000124', 'results', 'DGT_Column_ID_792', 'results_id', '', '7/16/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000124', 'results', 'DGT_Column_ID_793', 'root_directory', '', '7/16/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000124', 'results', 'DGT_Column_ID_794', 'file_link', '', '7/16/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000124', 'results', 'DGT_Column_ID_795', 'file_name', '', '7/16/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000124', 'results', 'DGT_Column_ID_796', 'file_create_date', '', '7/16/2021', '');
+
+INSERT INTO DG_Columns (Table_id, Table_Name, Column_ID, Column_Name, comment, create_date, modify_date)
+VALUES ('DGT000124', 'results', 'DGT_Column_ID_797', 'file_stream_col', '', '7/16/2021', '');
+
+-- Insert into PK
+
+INSERT INTO DG_Column_PK (Constraint_name, Constraint_Type, PK_ID, Column_ID, Comment, create_date, modify_date)
+VALUES ('PK_company_data_comp_id', 'PK', 'DGC_PK_ID_200',  'DGT_Column_ID_761', '', '7/13/2021', '');
+
+INSERT INTO DG_Column_PK (Constraint_name, Constraint_Type, PK_ID, Column_ID, Comment, create_date, modify_date)
+VALUES ('PK_employee_data_emp_id', 'PK', 'DGC_PK_ID_201',  'DGT_Column_ID_763', '', '7/13/2021', '');
+
+INSERT INTO DG_Column_PK (Constraint_name, Constraint_Type, PK_ID, Column_ID, Comment, create_date, modify_date)
+VALUES ('PK_employee_reviews_review_id', 'PK', 'DGC_PK_ID_202',  'DGT_Column_ID_770', '', '7/13/2021', '');
+
+-- Insert into FK
+
+INSERT INTO DG_Column_FK (Constraint_name, Constraint_Type, FK_ID, Column_ID, Comment, create_date, modify_date)
+VALUES ('FK_employee_data_comp_id', 'FK', 'DGC_FK_ID_200',  'DGT_Column_ID_761', '', '7/13/2021', '');
+
+INSERT INTO DG_Column_FK (Constraint_name, Constraint_Type, FK_ID, Column_ID, Comment, create_date, modify_date)
+VALUES ('FK_employee_reviews_emp_id', 'FK', 'DGC_PK_ID_201',  'DGT_Column_ID_771', '', '7/13/2021', '');
+
+INSERT INTO DG_Column_FK (Constraint_name, Constraint_Type, FK_ID, Column_ID, Comment, create_date, modify_date)
+VALUES ('FK_employee_reviews_comp_id', 'FK', 'DGC_PK_ID_202',  'DGT_Column_ID_772', '', '7/13/2021', '');
+
+-- Insert into NN
+
+INSERT INTO DG_Column_NotNull (Constraint_name, Constraint_Type, NN_ID, Column_ID, Comment, create_date, modify_date)
+VALUES ('NN_comp_id', 'NN', 'DGC_NN_ID_300', 'DGT_Column_ID_761', '', '7/13/2021', '');
+
+INSERT INTO DG_Column_NotNull (Constraint_name, Constraint_Type, NN_ID, Column_ID, Comment, create_date, modify_date)
+VALUES ('NN_comp_name', 'NN', 'DGC_NN_ID_301', 'DGT_Column_ID_762', '', '7/13/2021', '');
+
+INSERT INTO DG_Column_NotNull (Constraint_name, Constraint_Type, NN_ID, Column_ID, Comment, create_date, modify_date)
+VALUES ('NN_emp_id', 'NN', 'DGC_NN_ID_302', 'DGT_Column_ID_763', '', '7/13/2021', '');
+
+INSERT INTO DG_Column_NotNull (Constraint_name, Constraint_Type, NN_ID, Column_ID, Comment, create_date, modify_date)
+VALUES ('NN_review_id', 'NN', 'DGC_NN_ID_303', 'DGT_Column_ID_771', '', '7/13/2021', '');
+
+INSERT INTO DG_Column_NotNull (Constraint_name, Constraint_Type, NN_ID, Column_ID, Comment, create_date, modify_date)
+VALUES ('NN_emp_id', 'NN', 'DGC_NN_ID_304', 'DGT_Column_ID_772', '', '7/13/2021', '');
+
+INSERT INTO DG_Column_NotNull (Constraint_name, Constraint_Type, NN_ID, Column_ID, Comment, create_date, modify_date)
+VALUES ('NN_comp_id', 'NN', 'DGC_NN_ID_305', 'DGT_Column_ID_773', '', '7/13/2021', '');
+
+INSERT INTO DG_Column_NotNull (Constraint_name, Constraint_Type, NN_ID, Column_ID, Comment, create_date, modify_date)
+VALUES ('NN_results_id', 'NN', 'DGC_NN_ID_306', 'DGT_Column_ID_792', '', '7/16/2021', '');
+
+-- Insert into index
+
+INSERT INTO DG_Column_Index (Constraint_name, Constraint_Type, IDX_ID, Column_ID, Comment, create_date, modify_date)
+VALUES ('IDX_locationIndex', 'IDX', 'DGC_IDX_ID_300', 'DGT_Column_ID_774', '', '7/13/2021', '');
+
+INSERT INTO DG_Column_Index (Constraint_name, Constraint_Type, IDX_ID, Column_ID, Comment, create_date, modify_date)
+VALUES ('IDX_PK_company_data_comp_id', 'IDX', 'DGC_IDX_ID_301', 'DGT_Column_ID_761', '', '7/13/2021', '');
+
+INSERT INTO DG_Column_Index (Constraint_name, Constraint_Type, IDX_ID, Column_ID, Comment, create_date, modify_date)
+VALUES ('IDX_PK_employee_data_emp_id', 'IDX', 'DGC_IDX_ID_302', 'DGT_Column_ID_763', '', '7/13/2021', '');
+
+INSERT INTO DG_Column_Index (Constraint_name, Constraint_Type, IDX_ID, Column_ID, Comment, create_date, modify_date)
+VALUES ('IDX_PK_employee_reviews_review_id', 'IDX', 'DGC_IDX_ID_303', 'DGT_Column_ID_770', '', '7/13/2021', '');
+
+INSERT INTO DG_Column_Index (Constraint_name, Constraint_Type, IDX_ID, Column_ID, Comment, create_date, modify_date)
+VALUES ('UQ__results__F24FEFFE8531F1DD', 'IDX', 'DGC_IDX_ID_304', 'DGT_Column_ID_792', '', '7/13/2021', '');

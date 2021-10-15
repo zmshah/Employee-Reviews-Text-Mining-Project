@@ -1,0 +1,113 @@
+00:05:12 Good morning, everyone. This is team for text mining and we are doing the final presentation of our findings, our teammates are an analog is our chair and myself, I've met Ostroff so
+00:05:30 our topic is text mining, and we are doing an analysis of employee reviews for Fang companies for those who do not know thank companies, stand for Facebook Apple Amazon Netflix, Google and Microsoft as well, even though it's not in the acronym, these
+00:05:48 reviews have been gathered from a data set that we have scraped from Glassdoor, and we will talk about that further on in the slides
+00:05:59 for this presentation our tasks were mainly two things. The first one was to perform the analysis and draw conclusions based on our, our findings which we already covered in parts of sprint three and sprint four, and also complete the final report which
+00:06:16 outlines the story of what we wanted to do and what the project outcomes were.
+00:06:23 And now the word will talk to us about the database, and how we came about it.
+00:06:29 I think so I'll start by talking about the database that they created in us. So we needed to decide on the reliable source for fine employee reviews and as Ahmed previously mentioned, we decided to go with the side to go with the data that we scrape from
+00:06:43 Glassdoor reviews.
+00:06:46 Obviously, there were multiple options available online and each of them had different sources but the glass door one, we found to be the most efficient, and what the best option really out of all done on this first.
+00:07:01 The first image basically shows the CSV file that contains all of the raw data that we eventually important in our database, and then perform but at some analysis on.
+00:07:16 And the sun in the slide you can see the, the database management system software that we decided to go with so we decided on sequel servers instead of, since it is a reliable RDP me a relational database management system and it has a lot of support
+00:07:47 integration with different platforms such as Power BI and services such as Python sequel alchemy arm.
+00:07:41 And given the, an after we kind of decided on sequel server since, looking at the data that we had and the way we kind of set up our tables the overall data we found was fairly structured, and in this case of a relational database, such as sequel server
+00:07:59 just felt like the best choice on this diagram basically shows our.
+00:08:23 The database itself that we created in sequel server along with the database diagram showing all of our, the three main tables which are the employee reviews employee data and company data and we also have our fourth table.
+00:08:20 That's kind of separate from the roast but it's basically a results table where we were storing all of the basically the visualizations, and other results and files that we were obtaining from the text analysis.
+00:08:37 We were basically doing this by using File Stream, and the results table also does include links to it all. Each column also does include links to SharePoint where all the data is available to view on the data governance was another major use case for
+00:08:59 our project and as you can see from here these are all the columns tables and schema that we added to the database, provided by dr oz about.
+00:09:18 You can see that our schema number was five and we added the schema name and employee reviews along with of our columns and tables according to the.
+00:09:22 According to the column ID and table numbers that we have decided on beforehand.
+00:09:27 Now to play a quick video kind of demonstrating how we use Power BI for our project.
+00:09:36 Alright so connected to powerful Yeah, connecting our big sequel server is fairly simple.
+00:09:41 We just like to import data from sequel server here.
+00:09:53 You enter the server name the database name.
+00:09:58 Quick. Okay.
+00:10:15 Um, it's just loading now but um basically the connections been established and it should show all the, the tables that we are planning, that'd be would be important from the database, we can just like whatever it is.
+00:10:30 So these are all the tape of these are all the tables that are, they are that are in our database.
+00:10:35 We can select which tables we want to take and will preview the data in it.
+00:10:39 We can even specify which columns, and then just loaded, and it should show up on since we already had those done previously just going to skip the step here and load up, or just load on our last on was a visualization document that are follows already
+00:10:58 connected.
+00:11:04 So let's load and.
+00:11:09 Here you go.
+00:11:09 So as you can see here these are on, we have like all of our all of the necessary tables and data right here we can select with be.
+00:11:20 We can select what we need from your whatever about is that the plan and visualizing.
+00:11:26 We have all the different kinds of charts that we can use visualization on.
+00:11:33 In this case, in our case, on one of the things that we did was we created visualization of the calendar reviews of reviews by year as you can see, like, in this case, it started from 2008, which is around when glass door was established, and our data
+00:11:54 goes up and goes as far as it goes up until 2018 which is kind of where our data stops and you can definitely see a sharp increase in the number of reviews of in these years as more and more people started using glass door on in this page we have a just
+00:12:13 for not just a number of bar charts kind of showing the average or well the average rating for individual components, by companies so the first one is the average of word balance dollars per company name on the, the average of company benefit stars career
+00:12:33 opportunities stars and even culture values stars on you'll notice that in every case Amazon, the Amazon has the highest average on with culture values, stars on Netflix instant the lowest average in this case on with average word balance.
+00:12:54 Facebook has the lowest with average company benefit.
+00:13:01 Once again, Facebook has the lowest.
+00:13:05 Um, but yeah.
+00:13:11 Power BI is pretty useful for showing on basically different visualization from different trends in the data through just pretty simple visualization options arm.
+00:13:19 And then the third page. We also have just an average of overall ratings by company name. So as you can see Amazon has the highest average.
+00:13:29 And on Netflix kind of has the lowest average but in general, the overall ratings are pretty high.
+00:13:36 And these are basically some of the other ways that we've used some Power BI to kind of visualize the data from our sequel server database.
+00:13:58 Now also play another application of the that we use for Power BI kind of showing how we use the location data to create an interactive map.
+00:14:12 After connecting to our database. The Power BI, one of the most important visualizations that we are going to make is the use of geographical maps to represents the different clusters, or nodes were reviews for our companies originated from.
+00:14:29 After choosing the, the map visualization from the visualization menu, and then adding that location to the appropriate parameters.
+00:14:39 we can see that it clearly works and it gives different colors to each cluster. However, we also added the count of the location to the size parameter, which should give different size clusters, based on the number of reviews for that specific location.
+00:14:56 Upon first examination, we can see that perhaps Nothing is wrong. But if we look a bit closely, we can see here that there is this big cluster that has none, as the location, and that's probably what's been causing the skews and this is an outlier 25,000
+00:15:15 reviews, do not have a location. So we have to exclude them in order to present our data in a proper way. So we right click exclude, and then it takes a little bit of time but eventually it will remove the 25,000 reviews from the power from the Power
+00:15:34 BI map and Bernie, we will see which clusters we have based on the number of views that we have for that location. If we look closely, here we can see that we have multiple filters.
+00:15:48 Right now we have highlighted that it excluded the location of non, we can further narrow down to certain locations, or we can filter based on the count of reviews per location, we can even use combined logic for that in a moment.
+00:16:05 You can see it slowly in here, it will respond and update the map with the new values for the reviews, and when when it does that we will be able to see, like right here, we will be able to see that we have two big clusters here if we hover over them
+00:16:24 we have Seattle. And we also. We also have Redmond in Washington state, which makes sense because a lot of the top thing companies like Microsoft and Amazon exist within that region.
+00:16:37 But if we look closely, zoom into India we can see that we still have some big clusters, as Hyderabad, with over two key reviews.
+00:16:47 Let's use some of the filtering techniques right now and let's maybe get reviews that are greater than 100. And then we apply the filter and automatically we can see that this is much cleaner.
+00:17:04 We still have some clusters with different nodes and different sizes, but it's much clearer, and you can see some of the major cities that these employees come from Hyderabad.
+00:17:19 We have Bangalore Oh, And here we have tonight.
+00:17:25 We also have Singapore.
+00:17:30 And if we go back to the US we can see the different states. One of them is New York City with over 1000 reviews, and there is another cluster in the Bay Area which is near San Francisco and San Jose, and Silicon Valley.
+00:17:47 And then again, we will move that number to 1000 reviews. And if we apply the filter, we can see that we only have a handful of places such as Redmond Seattle as well.
+00:18:02 We have, Mountain View, California. We have New York City. And over here we have, India, and the search for a map we can add more functions to it.
+00:18:24 After.
+00:18:24 After we're done with that we can connect, by phone to sequel server through the use of a library called sequel alchemy. The reason for that is that we're doing most of our analysis in by phone using specie for text mining to output some of the results
+00:18:41 that we want to that we want to visualize, so we have to find a way to connect Python to Ms sequel and that's where sequel alchemy comes in, if you look at this slide we can see we are creating an engine, than managing a connection, and then testing the
+00:18:56 connection by built by just printing the table names.
+00:19:00 For example, if you look at so far, you can see that we are selecting the column names from the columns of the employee reviews table. And then we are using these column names in order to build a data frame which we then can use in order to do some of
+00:19:25 our text mining, or that we can use to do some analysis and then push back to Power BI.
+00:19:34 So, for data analysis we decided to use a combination of both Python, mainly spacey and Power BI.
+00:19:42 This meant that we needed to learn some additional Python libraries, such as number five, which stands for numerical Python pandas which is the main library that we use for building our data frames which are a unit of data analysis psychic learn which
+00:19:58 we will use to build our text classification model, and some other libraries such as word cloud to build some of the visualizations and sequel alchemy, which we talked about already.
+00:20:11 So for our classification model we covered that in extensive details in sprint for, but here is a recap of the results, we got an accuracy of about 91%, which is pretty good given that we have our data frame that we created.
+00:20:28 it was about 100,000 labeled reviews.
+00:20:32 One denoting a positive reviews zero denoting a negative review. And basically, when we see those reviews to our classification model, it will predict whether or not this is positive, with an accuracy of 91%.
+00:20:49 If we move on to the next slide, Amanda will start us off with our findings. And our final data visualizations that we have.
+00:20:58 Okay so here we're just going to show a few of the visualizations that we put together.
+00:21:05 As a result of our data output. So in this example, we have Amazon are pros. And in this word cloud we have generated here is the larger the word, the more often it shows up within our text.
+00:21:24 So you'll see there's words here like great benefit work, and good those all stand out those are obviously important when it comes to some of the pros for Amazon.
+00:21:40 Here we have sort of an opposite we have from Microsoft Word Cloud from the cons.
+00:21:48 And again, you know there's obviously more words that stand out here, like work, company management team.
+00:21:58 These are all words that stand out and obviously like I said in the previous slide, the larger the word.
+00:22:06 Usually, You see it more often in the data.
+00:22:13 Here is also another word cloud that we ran and it's actually just a summary of the company for Apple and I think what is important to notice here is with seen words great company work, Apple.
+00:22:30 This actually can tell us that it.
+00:22:37 Most likely, employees, enjoy working here.
+00:22:38 So when there's a lot of good words coming through that's when you can kind of tell the experience for them or for the employees is good
+00:22:49 and moving on here, obviously, just kind of touching on what was covered in His Power BI demo. But these graphs just show a comparison of different reading categories by company so within the reviews in the data, there are, there is a number of categories
+00:23:12 where the employees could rate that category.
+00:23:18 With a five star rating. so one to five five being the best.
+00:23:23 So just in the upper left corner. We have just the average rating of work balance, and also so I pointed out that Amazon is leading in all of these categories so in the, in the upper right corner we have companies benefits.
+00:23:42 So again, it's average rating and lower left we have average rating of career opportunities within the company.
+00:23:54 And then, the average of the average rating of culture values. So you can just see this is a great way to visualize the different trends that's in the data.
+00:24:04 And it's neat to see to company compared to the other.
+00:24:11 Next slide.
+00:24:11 So here's just the average overall company rating so as far as like just category rating there's also an overall company rating so you can see here, Facebook, actually ranks very high.
+00:24:25 Amongst these companies and Netflix is down at the bottom there.
+00:24:33 And then this is just a count of current versus former employee reviews. so here we can see on the left side current employees and then on the right.
+00:24:45 Approximately half of that is former employees.
+00:24:50 And then here we have this is actually a visualization that we generated through Power BI as well. And this is just the trend of reviews by year.
+00:25:02 So obviously this data, we won't see anything prior to 2008 because that's when glass door presented this information. And then our data again stopped at 2018.
+00:25:17 Here is just a different version of that of that graph and this is just more of a bar chart verse in line chart.
+00:25:33 And then this represents the top review locations. amongst all of the, all the reviews.
+00:25:48 So, our project outcomes.
+00:25:52 We were able to successfully build a database that was capable of ingesting more reviews in the future, but also being able to hold historical data, so that when we run through these reviews, the text mind we can actually store.
+00:26:11 Our results every time we run through it.
+00:26:14 We were also able to successfully analyze textual data of these reviews, and to, we were able to discover prominent features and key insights that are unique to each company within the database.
+00:26:32 We were also able to create a pipeline of analysis between SQL Server.
+00:26:38 Power BI and Python.
+00:26:41 And we were able we discovered the main geographical sources of reviews by utilizing Power BI, and the functionality there by creating the interactive map.
+00:26:54 And lastly, we were able to build a text classification model to predict whether view will be positive or negative, and the accuracy on that was greater than 90%.
+00:27:09 That's all we have for you today. Thank you very much for your time.

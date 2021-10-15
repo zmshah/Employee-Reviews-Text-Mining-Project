@@ -1,0 +1,27 @@
+SELECT *
+FROM DG_Column_PK
+WHERE Column_ID IN ('DGT_Column_ID_761', 'DGT_Column_ID_763', 'DGT_Column_ID_770');
+
+SELECT *
+FROM DG_Column_FK
+WHERE Column_ID IN ('DGT_Column_ID_761', 'DGT_Column_ID_771', 'DGT_Column_ID_772');
+
+SELECT *
+FROM DG_Column_NotNull
+WHERE Column_ID >= 'DGT_Column_ID_761' AND Column_ID <= 'DGT_Column_ID_792';
+
+SELECT *
+FROM DG_Column_Index
+WHERE Column_ID >= 'DGT_Column_ID_763' AND Column_ID <= 'DGT_Column_ID_792';
+
+SELECT *
+FROM DG_Schema
+WHERE schema_ID = 5;
+
+SELECT *
+FROM DG_Columns
+WHERE Column_ID >= 'DGT_Column_ID_761' AND Column_ID <= 'DGT_Column_ID_800';
+
+SELECT *
+FROM DG_Tables
+WHERE Table_ID >= 'DGT000121' AND Table_ID <= 'DGT000125';
