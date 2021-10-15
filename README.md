@@ -1,6 +1,6 @@
 # Employee-Reviews-Text-Mining-Project
 Text mining project of Employee Reviews from FAANG companies. Dataset includes reviews from Glassdoor
-/n Database was created in MSSQL.
+<br/> Database was created in MSSQL.
 Power BI Used for preliminary visualization
 Python used for Text mining
 
