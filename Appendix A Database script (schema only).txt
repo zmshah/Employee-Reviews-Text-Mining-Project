@@ -1,0 +1,203 @@
+USE [master]
+GO
+/****** Object:  Database [EmployeeReview]    Script Date: 7/22/2021 1:02:13 PM ******/
+CREATE DATABASE [EmployeeReview]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'EmployeeReview', FILENAME = N'D:\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\EmployeeReview.mdf' , SIZE = 270336KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB ), 
+ FILEGROUP [Results] CONTAINS FILESTREAM  DEFAULT
+( NAME = N'Results', FILENAME = N'D:\CIS 640\Results\Results' , MAXSIZE = UNLIMITED)
+ LOG ON 
+( NAME = N'EmployeeReview_log', FILENAME = N'D:\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\EmployeeReview_log.ldf' , SIZE = 335872KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT
+GO
+ALTER DATABASE [EmployeeReview] SET COMPATIBILITY_LEVEL = 150
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [EmployeeReview].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [EmployeeReview] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [EmployeeReview] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [EmployeeReview] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [EmployeeReview] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [EmployeeReview] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [EmployeeReview] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [EmployeeReview] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [EmployeeReview] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [EmployeeReview] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [EmployeeReview] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [EmployeeReview] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [EmployeeReview] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [EmployeeReview] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [EmployeeReview] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [EmployeeReview] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [EmployeeReview] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [EmployeeReview] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [EmployeeReview] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [EmployeeReview] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [EmployeeReview] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [EmployeeReview] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [EmployeeReview] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [EmployeeReview] SET RECOVERY FULL 
+GO
+ALTER DATABASE [EmployeeReview] SET  MULTI_USER 
+GO
+ALTER DATABASE [EmployeeReview] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [EmployeeReview] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [EmployeeReview] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [EmployeeReview] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [EmployeeReview] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [EmployeeReview] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+EXEC sys.sp_db_vardecimal_storage_format N'EmployeeReview', N'ON'
+GO
+ALTER DATABASE [EmployeeReview] SET QUERY_STORE = OFF
+GO
+USE [EmployeeReview]
+GO
+/****** Object:  Table [dbo].[company_data]    Script Date: 7/22/2021 1:02:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[company_data](
+	[comp_id] [int] NOT NULL,
+	[comp_name] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_company_data_comp_id] PRIMARY KEY CLUSTERED 
+(
+	[comp_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[employee_data]    Script Date: 7/22/2021 1:02:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[employee_data](
+	[emp_id] [int] NOT NULL,
+	[comp_id] [int] NULL,
+	[emp_fname] [nvarchar](50) NULL,
+	[emp_lname] [nvarchar](50) NULL,
+	[emp_email] [nvarchar](50) NULL,
+	[emp_phone] [nvarchar](50) NULL,
+	[emp_address] [nvarchar](100) NULL,
+ CONSTRAINT [PK_employee_data_emp_id] PRIMARY KEY CLUSTERED 
+(
+	[emp_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[employee_reviews]    Script Date: 7/22/2021 1:02:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[employee_reviews](
+	[review_id] [int] NOT NULL,
+	[emp_id] [int] NOT NULL,
+	[comp_id] [int] NOT NULL,
+	[location] [nvarchar](255) NULL,
+	[review_date] [datetime] NULL,
+	[employee_status] [nvarchar](255) NULL,
+	[position] [nvarchar](255) NULL,
+	[summary] [nvarchar](255) NULL,
+	[pros] [nvarchar](max) NULL,
+	[cons] [nvarchar](max) NULL,
+	[advice_to_mgmt] [nvarchar](max) NULL,
+	[overall_ratings] [float] NULL,
+	[work_balance_stars] [float] NULL,
+	[culture_values_stars] [float] NULL,
+	[career_opportunities_stars] [float] NULL,
+	[comp_benefit_stars] [float] NULL,
+	[senior_management_stars] [float] NULL,
+	[helpful_count] [float] NULL,
+	[link] [nvarchar](255) NULL,
+	[is_anonymous] [bit] NULL,
+	[avg_rating] [decimal](2, 1) NULL,
+ CONSTRAINT [PK_employee_reviews_review_id] PRIMARY KEY NONCLUSTERED 
+(
+	[review_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Index [IDX_PK_employee_reviews_review_id]    Script Date: 7/22/2021 1:02:13 PM ******/
+CREATE CLUSTERED INDEX [IDX_PK_employee_reviews_review_id] ON [dbo].[employee_reviews]
+(
+	[review_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[results]    Script Date: 7/22/2021 1:02:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[results](
+	[results_id] [uniqueidentifier] ROWGUIDCOL  NOT NULL,
+	[root_directory] [varchar](max) NULL,
+	[file_link] [varchar](max) NULL,
+	[file_name] [varchar](max) NULL,
+	[file_create_date] [datetime] NULL,
+	[file_stream_col] [varbinary](max) FILESTREAM  NULL,
+UNIQUE NONCLUSTERED 
+(
+	[results_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY] FILESTREAM_ON [Results]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [locationIndex]    Script Date: 7/22/2021 1:02:13 PM ******/
+CREATE NONCLUSTERED INDEX [locationIndex] ON [dbo].[employee_reviews]
+(
+	[location] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[employee_data]  WITH CHECK ADD  CONSTRAINT [FK_employee_data_comp_id] FOREIGN KEY([comp_id])
+REFERENCES [dbo].[company_data] ([comp_id])
+GO
+ALTER TABLE [dbo].[employee_data] CHECK CONSTRAINT [FK_employee_data_comp_id]
+GO
+ALTER TABLE [dbo].[employee_reviews]  WITH CHECK ADD  CONSTRAINT [FK_employee_reviews_comp_id] FOREIGN KEY([comp_id])
+REFERENCES [dbo].[company_data] ([comp_id])
+GO
+ALTER TABLE [dbo].[employee_reviews] CHECK CONSTRAINT [FK_employee_reviews_comp_id]
+GO
+ALTER TABLE [dbo].[employee_reviews]  WITH CHECK ADD  CONSTRAINT [FK_employee_reviews_emp_id] FOREIGN KEY([emp_id])
+REFERENCES [dbo].[employee_data] ([emp_id])
+GO
+ALTER TABLE [dbo].[employee_reviews] CHECK CONSTRAINT [FK_employee_reviews_emp_id]
+GO
+USE [master]
+GO
+ALTER DATABASE [EmployeeReview] SET  READ_WRITE 
+GO
