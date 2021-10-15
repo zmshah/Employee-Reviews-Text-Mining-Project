@@ -10,4 +10,4 @@ Python used for Text mining
 
 ![alt text](/results/apple_summary.png)
 
-![alt text](/results/training.png)
+![alt text](/results/training.PNG)
